@@ -2,14 +2,18 @@
 
 import { useState, useEffect } from "react";
 import Confetti from "react-confetti";
+import useSound from "use-sound";
 
 const Question = ({ place, options, updateScore, onNext }) => {
-  const [hints, setHints] = useState([place.clues[0]]); // Start with only the first clue
+  const [hints, setHints] = useState([place.clues[0]]); 
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [isCorrect, setIsCorrect] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
 
-  // Reset hints when a new question is loaded
+  const [playCorrect] = useSound("/assets/sounds/correct.mp3", { interrupt: true });
+  const [playWrong] = useSound("/assets/sounds/wrong.mp3", { interrupt: true });
+
+
   useEffect(() => {
     setHints([place.clues[0]]);
     setSelectedAnswers([]);
@@ -22,12 +26,14 @@ const Question = ({ place, options, updateScore, onNext }) => {
     setIsCorrect(correct);
 
     if (correct) {
+      playCorrect();
       setShowConfetti(true);
       setTimeout(() => setShowConfetti(false), 3000);
       updateScore(true, hints.length > 1);
     } else {
+      playWrong();
       if (hints.length === 1) {
-        setHints((prev) => [...prev, place.clues[1]]); // Show second hint only if the first guess is wrong
+        setHints((prev) => [...prev, place.clues[1]]);
       }
       updateScore(false, false);
     }
@@ -37,7 +43,6 @@ const Question = ({ place, options, updateScore, onNext }) => {
     <div className="bg-white p-6 rounded-2xl shadow-lg text-center w-96 border border-gray-300">
       {showConfetti && <Confetti />}
 
-      {/* Display all hints */}
       {hints.map((hint, index) => (
         <h2 key={index} className="text-xl font-semibold mb-2 text-gray-900">
           {hint}
@@ -64,7 +69,9 @@ const Question = ({ place, options, updateScore, onNext }) => {
       </div>
 
       {isCorrect && place.fun_fact && (
-        <p className="mt-4 text-gray-700 italic">{place.fun_fact[Math.floor(Math.random() * place.fun_fact.length)]}</p>
+        <p className="mt-4 text-gray-700 italic">
+          {place.fun_fact[Math.floor(Math.random() * place.fun_fact.length)]}
+        </p>
       )}
 
       {isCorrect && (

@@ -15,7 +15,7 @@ const Guess = () => {
   const [playedPlaces, setPlayedPlaces] = useState(new Set());
   const [score, setScore] = useState({ correct: 0, wrong: 0 });
   const [username, setUsername] = useState("");
-  const [showPopup, setShowPopup] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
   const [inviteMessage, setInviteMessage] = useState(""); 
   const dispatch = useDispatch();
 

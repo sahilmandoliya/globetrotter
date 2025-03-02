@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchLeaderboard } from "@/redux/slices/appSlice";
+import { fetchLeaderboard } from "../../redux/slices/appSlice"; 
 
 const Leaderboard = () => {
   const dispatch = useDispatch();

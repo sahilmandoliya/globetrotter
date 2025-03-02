@@ -1,6 +1,6 @@
 "use client";
 
-import { Utils } from "@/utils/Utils";
+import { Utils } from "../../utils/Utils";
 import { fetchPlaces } from "../../redux/slices/placesSlices";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";

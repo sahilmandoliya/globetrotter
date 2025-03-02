@@ -1,7 +1,7 @@
 "use client";
 
-import Guess from "@/components/guess/Guess";
-import Leaderboard from "@/components/leaderboard/Leaderboard";
+import Guess from "../components/Guess/Guess";
+import Leaderboard from "..//components/leaderboard/Leaderboard";
 import { useSelector } from "react-redux";
 
 export default function Home() {
@@ -25,7 +25,6 @@ export default function Home() {
         )}
       </div>
 
-      {/* Leaderboard Section (Right on large screens, below on small screens) */}
       <div className="w-full md:w-1/4 mt-10 md:mt-0 md:ml-6">
         <Leaderboard />
       </div>

@@ -76,7 +76,6 @@ const Guess = () => {
     }));
   };
 
-  // Invite Friend Functionality
   const handleInvite = () => {
     if (!username) {
       alert("Please enter your username before inviting friends!");
@@ -86,11 +85,11 @@ const Guess = () => {
     const inviteLink = `${window.location.origin}/game?invitedBy=${encodeURIComponent(username)}`;
     navigator.clipboard.writeText(inviteLink);
     setInviteMessage("Invite link copied! Share it with your friends.");
-    setTimeout(() => setInviteMessage(""), 3000); // Reset message after 3 sec
+    setTimeout(() => setInviteMessage(""), 3000);
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center ">
       <Scorecard score={score} username={username} />
 
       {showPopup && (
@@ -139,7 +138,6 @@ const Guess = () => {
         </div>
       )}
 
-      {/* Invite Friend Section */}
       <button
         onClick={handleInvite}
         className="mt-6 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition"

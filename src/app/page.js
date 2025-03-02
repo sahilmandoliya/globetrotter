@@ -10,10 +10,10 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col md:flex-row items-center md:items-start justify-center text-white px-4 md:px-10">
       <div className="w-full md:w-3/4 flex flex-col items-center">
-        <h1 className="text-4xl font-extrabold mb-6 drop-shadow-lg text-center md:text-left">
+        <h1 className="text-4xl font-extrabold mb-6 text-center md:text-left text-blue-500">
           🌍 Globetrotter 🌍
         </h1>
-        <p className="text-lg mb-4 text-center md:text-left max-w-lg">
+        <p className="text-lg mb-4 text-center md:text-left max-w-lg text-blue-500">
           Solve clues, guess famous places, and unlock fun facts! Ready to test
           your geography skills?
         </p>

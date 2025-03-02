@@ -13,7 +13,7 @@ const Leaderboard = () => {
   }, [dispatch]);
 
   return (
-    <div className="bg-gradient-to-r from-blue-900 to-indigo-900 p-6 rounded-2xl shadow-2xl w-96 text-white">
+    <div className="bg-gradient-to-r from-blue-900 to-indigo-900 p-6 rounded-2xl shadow-2xl w-96 text-white m-4">
       <h2 className="text-2xl font-bold text-center mb-4">🏆 Leaderboard</h2>
 
       {loading ? (

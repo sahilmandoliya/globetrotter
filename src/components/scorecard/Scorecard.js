@@ -2,7 +2,7 @@
 
 const Scorecard = ({ score, username }) => {
   return (
-    <div className="bg-white p-4 rounded-2xl shadow-md flex flex-col w-72">
+    <div className="bg-white p-4 rounded-2xl shadow-md flex flex-col w-72 mb-4">
       {/* Username Display */}
       {username && (
         <div className="text-center text-gray-700 font-semibold mb-2">
